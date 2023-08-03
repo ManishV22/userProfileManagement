@@ -1,0 +1,69 @@
+<div class="main_div">
+    <div class="modal-header">
+        <h5 class="modal-title" id="SKUModalLabel">Add User Information</h5>
+        <a href="javascript:void(0)" class="close" (click)="closeModal()"> <span aria-hidden="true">×</span> </a>
+    </div>
+    <div class="container-fluid p-0 h-100 signup p-3">
+        <form #dashboardsForm="ngForm" class="ng-invalid ng-touched ng-dirty" [formGroup]="dashboardForm"
+            (ngSubmit)="addDashboardFormData(dashboardsForm.value)">
+            <div class="d-flex justify-content-between">
+                <div class="form-group field_1">
+                    <label><span class="required-asterisk">*</span> Name:</label>
+                    <input type="text" class="form-control" placeholder="Enter Name" formControlName="name">
+                </div>
+            </div>
+            <div class="d-flex justify-content-between">
+                <div class="form-group field_1">
+                    <label><span class="required-asterisk">*</span> Email:</label>
+                    <input type="email" name="email" class="form-control" placeholder="Enter Email" formControlName="email">
+                </div>
+            </div>
+            <div class="d-flex justify-content-between">
+                <div class="form-group field_1">
+                    <label><span class="required-asterisk">*</span> Gender:</label>
+                    <input type="text" class="form-control" placeholder="Enter Gender" formControlName="gender">
+                </div>
+            </div>
+
+            <div formArrayName="strength" *ngFor="let address of strengthControls; let i = index;">
+                <div>
+                    <div class="row">
+                        <div class="col-6">
+                            <h4>Strength {{i + 1}}</h4>
+                        </div>
+                        <div class="col-6 text-right">
+                            <button type="button" class="btn btn-danger btn-sm" (click)="removeStrength(i)">Remove</button>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <div class="form-group field_1">
+                            <!-- <label ><span class="required-asterisk">*</span> Terms and Conditions {{i + 1}}:</label>-->
+                            <input type="text" class="form-control" placeholder="Enter Strength" [formControlName]="i">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="btn btn-orders btn_add" (click)="addStrength()">Add Strength</button>
+
+
+                <!-- <div class="form-group">
+                <label><span class="required-asterisk">*</span> Strength:</label>
+                <textarea class="form-control" placeholder="Enter Strength" formControlName="strength"></textarea>
+            </div> -->
+            <div class="form-group">
+                <label><span class="required-asterisk">*</span> About:</label>
+                <textarea class="form-control" placeholder="Enter About" formControlName="about"></textarea>
+            </div>
+
+            <div class="col-12 col-md-10 col-lg-10 pl-0 mt-4">
+
+                <button class="btn btn-lg btn-primary active btn-block mb-1 mt-2 mr-2" type="reset"
+                    (click)="closeModal()">Cancel</button>
+
+                <button class="btn btn-lg btn-primary active action-btn btn-block mb-1" ngbAutofocus name="btn_login"
+                    type="submit">Add</button>
+
+            </div>
+        </form>
+    </div>
+</div>

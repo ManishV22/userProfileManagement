@@ -1,0 +1,30 @@
+<div class="main_div">
+    <div class="modal-header">
+        <h5 class="modal-title" id="SKUModalLabel">Dashboard Id: {{dashboardData?._id}}</h5>
+        <a href="javascript:void(0)" class="close" (click)="closeModal()"> <span aria-hidden="true">×</span> </a>
+        <!-- (click)="closeModal()" -->
+    </div>
+    <div class="container mb-2">
+        <h3 class="titleHead">User Information Details</h3>
+        <div class="d-flex">
+            <div class="title"><b>Name :</b></div>
+            <div class="Property">{{dashboardData?.name}}</div>
+        </div>
+        <div class="d-flex">
+            <div class="title"><b>Email :</b></div>
+            <div class="Property">{{dashboardData?.email}}</div>
+        </div>
+        <div class="d-flex">
+            <div class="title"><b>Gender :</b></div>
+            <div class="Property">{{dashboardData?.gender}}</div>
+        </div>
+        <div class="d-flex">
+            <div class="title"><b>Strength :</b></div>
+            <div class="Property">{{dashboardData?.strength}}</div>
+        </div>
+        <div class="d-flex">
+            <div class="title"><b>About :</b></div>
+            <div class="Property">{{dashboardData?.about}}</div>
+        </div>
+    </div>
+</div>

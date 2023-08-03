@@ -1,0 +1,13 @@
+<div class="form-group">
+    <!-- <input type="text" class="form-control"
+        formControlName="currency"> -->
+        <label>Select Unit</label>
+    <select class="form-control select-child" [(ngModel)]="selectedVal"
+     (change)="selectedValue()">
+     <!-- [(ngModel)]="selectedVal" -->
+        <option value="" selected disabled>Select </option>
+        <option *ngFor="let data of option1">{{data.CustomerType}}</option>
+        <!-- <option value="usd">USD</option>
+        <option value="aed">AED</option> -->
+    </select>
+</div>

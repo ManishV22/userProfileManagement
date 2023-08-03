@@ -1,0 +1,27 @@
+<nav class="sidebar sidebar-offcanvas" id="sidebar">
+  <ul class="nav">
+
+    <li class="nav-item" [ngClass]="{ 'active': dashboard.isActive }">
+      <a class="nav-link" routerLink="/dashboard" routerLinkActive #dashboard="routerLinkActive">
+        <span class="menu-title">Dashboard</span>
+        <i class="mdi mdi-home menu-icon"></i>
+      </a>
+    </li>
+    <li class="nav-item" [ngClass]="{'active' : adminBoard.isActive }">
+      <a class="nav-link" (click)="adminCollapsed = !adminCollapsed" [attr.aria-expanded]="adminCollapsed" aria-controls="admin">
+        <span class="menu-title">Admin</span>
+        <i class="mdi mdi-chevron-down menu-arrow"></i>
+        <i class="mdi mdi-account menu-icon"></i>
+        <!-- <i class="mdi mdi-crosshairs-gps menu-icon"></i> -->
+      </a>
+      <div class="collapse" id="admin" [ngbCollapse]="!adminCollapsed">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" routerLink="admin/adminBoard" routerLinkActive="active" #adminBoard="routerLinkActive">Admin Board</a></li>
+        </ul>
+      </div>
+    </li>
+
+
+
+  </ul>
+</nav>
