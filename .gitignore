@@ -2,6 +2,7 @@
 
 # compiled output
 /dist
+/.firebase
 /dist-server
 /tmp
 /out-tsc
@@ -45,5 +46,5 @@ testem.log
 
 # System Files
 .DS_Store
-package-lock.json
+# package-lock.json
 Thumbs.db
